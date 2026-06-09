@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 20px;
+    }
+    .chart-container {
+      position: relative;
+      height: 400px;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">Data Dashboard</h1>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            Data Chart
+          </div>
+          <div class="card-body">
+            <div class="chart-container">
+              <canvas id="dataChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">
+            Add Data
+          </div>
+          <div class="card-body">
+            <form id="addForm">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="value" class="form-label">Value</label>
+                <input type="number" class="form-control" id="value" step="0.01" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            Data List
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Created At</th>
+                </tr>
+              </thead>
+              <tbody id="itemsTable">
+                <% items.forEach(function(item) { %>
+                  <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.value %></td>
+                    <td><%= item.created_at %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/chart.umd.min.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

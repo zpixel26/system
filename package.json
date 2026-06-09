@@ -1,0 +1,30 @@
+{
+  "name": "system",
+  "version": "1.0.0",
+  "description": "owner is person , now main is me ,2026",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "init-db": "node db/init.js",
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zpixel26/system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zpixel26/system/issues"
+  },
+  "homepage": "https://github.com/zpixel26/system#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  }
+}
